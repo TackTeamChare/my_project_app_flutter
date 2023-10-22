@@ -2,15 +2,13 @@ import 'package:blog_app/views/login.dart';
 import 'package:flutter/material.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
-
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
-
 class _RegisterScreenState extends State<RegisterScreen> {
+  
   Map userData = {};
   final _formkey = GlobalKey<FormState>();
 
@@ -182,27 +180,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                   ),
                 ),
-                // Center(
-                //   child: Padding(
-                //     padding: EdgeInsets.only(top: 20, left: 90),
-                //     child: Row(
-                //       children: [
-                //         Container(
-                //           height: 40,
-                //           width: 40,
-                //         ),
-                //         Container(
-                //           height: 70,
-                //           width: 70,
-                //         ),
-                //         Container(
-                //           height: 40,
-                //           width: 40,
-                //         ),
-                //       ],
-                //     ),
-                //   ),
-                // ),
+         
                 Center(
                   child: Container(
                     padding: EdgeInsets.only(top: 0),

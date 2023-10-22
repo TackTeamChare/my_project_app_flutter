@@ -1,9 +1,12 @@
+
 import 'package:blog_app/models/article.dart';
 import 'package:blog_app/views/article_detail_page.dart';
 import 'package:blog_app/views/article_detail_page_add.dart';
 import 'package:blog_app/views/article_detail_page_edit.dart';
 import 'package:blog_app/views/user_profile_page.dart';
 import 'package:flutter/material.dart';
+
+import 'package:google_fonts/google_fonts.dart';
 
 class BlogScreen extends StatefulWidget {
   @override
@@ -14,6 +17,10 @@ class _BlogScreenState extends State<BlogScreen> {
   List<Article> articles = []; // รายการบทความ
   TextEditingController searchController =
       TextEditingController(); // ตัวควบคุมสำหรับค้นหา
+
+
+  
+ 
 
   @override
   void initState() {
@@ -40,15 +47,32 @@ class _BlogScreenState extends State<BlogScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        elevation: 0,
         title: Text(
-          "Blog App",
-          style: TextStyle(
-            color: Colors.white,
+          'Blog App',
+          style: GoogleFonts.workSans(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 129, 129, 129),
-        centerTitle: true,
+        backgroundColor: Colors.white,
+        actions:  [
+          Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: GestureDetector( 
+      onTap: () {
+      
+                                
+   
+      },
+            child: CircleAvatar(
+              child: Icon(Icons.person),
+              
+            ),
+          )
+        ],
       ),
       drawer: buildDrawer(context),
       body: Padding(
@@ -56,7 +80,6 @@ class _BlogScreenState extends State<BlogScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // ส่วนค้นหา
             Padding(
               padding: const EdgeInsets.all(14),
               child: TextField(
